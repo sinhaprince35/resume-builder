@@ -4,8 +4,6 @@ import { jsPDF } from "jspdf";
 
 const generatePDF = (formData) => {
   const doc = new jsPDF();
-
-  // Add content to the PDF
   if (formData.name) {
     doc.text(formData.name.toUpperCase(), 20, 20);
   }
@@ -38,8 +36,6 @@ const generatePDF = (formData) => {
   if (formData.address) {
     doc.text(20, 150, `Address: ${formData.address}`);
   }
-
-  // Save the PDF
   doc.save("resume.pdf");
 };
 
