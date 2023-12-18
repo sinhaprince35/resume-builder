@@ -59,3 +59,16 @@ strong {
 button{
     height: 50px;
 }
+
+@media screen and (max-width: 600px) {
+    .preview-container {
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .left-side,
+    .right-side {
+        max-width: 100%;
+        margin: 0;
+    }
+}
