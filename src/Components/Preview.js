@@ -1,5 +1,47 @@
 import React from "react";
 import "./Style/preview.css";
+import { jsPDF } from "jspdf";
+
+const generatePDF = (formData) => {
+  const doc = new jsPDF();
+
+  // Add content to the PDF
+  if (formData.name) {
+    doc.text(formData.name.toUpperCase(), 20, 20);
+  }
+
+  if (formData.image) {
+    const imgData = URL.createObjectURL(formData.image);
+    doc.addImage(imgData, "JPEG", 20, 30, 50, 50);
+  }
+
+  if (formData.bio) {
+    doc.text(20, 90, formData.bio);
+  }
+
+  if (formData.email) {
+    doc.text(20, 110, `Email: ${formData.email}`);
+  }
+
+  if (formData.phone) {
+    doc.text(20, 120, `Phone: ${formData.phone}`);
+  }
+
+  if (formData.linkedin) {
+    doc.text(20, 130, `LinkedIn: ${formData.linkedin}`);
+  }
+
+  if (formData.github) {
+    doc.text(20, 140, `GitHub: ${formData.github}`);
+  }
+
+  if (formData.address) {
+    doc.text(20, 150, `Address: ${formData.address}`);
+  }
+
+  // Save the PDF
+  doc.save("resume.pdf");
+};
 
 const Preview = ({ formData }) => {
   return (
@@ -12,7 +54,7 @@ const Preview = ({ formData }) => {
               src={URL.createObjectURL(formData.image)}
               alt="User Avatar"
             />
-            <hr/>
+            <hr />
           </>
         )}
 
@@ -57,6 +99,12 @@ const Preview = ({ formData }) => {
           <p>{formData.address && <>{formData.address}</>}</p>
         </div>
         <hr />
+        <button
+          style={{ fontSize: "16px", padding: "10px 20px", margin: "10px" }}
+          onClick={() => generatePDF(formData)}
+        >
+          Download as PDF
+        </button>
       </div>
     </div>
   );
