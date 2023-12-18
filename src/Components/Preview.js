@@ -93,8 +93,30 @@ const Preview = ({ formData }) => {
             </>
           )}
           <p>{formData.address && <>{formData.address}</>}</p>
+          <hr />
+          <h3>Education Details</h3>
+          {formData.education && (
+            <>
+              {formData.education}
+              <br />
+            </>
+          )}
+          <h3>Experience</h3>
+          {formData. experience && (
+            <>
+              {formData.experience}
+              <br />
+            </>
+          )}
+          <h3>Add Skills</h3>
+          {formData.skills && (
+            <>
+              {formData.skills}
+              <br />
+            </>
+          )}
         </div>
-        <hr />
+        
         <button
           style={{ fontSize: "16px", padding: "10px 20px", margin: "10px" }}
           onClick={() => generatePDF(formData)}
