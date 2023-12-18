@@ -1,10 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Days+One&family=Inter:wght@300&family=Open+Sans:wght@400;500;600;700&family=Outfit&family=Poppins&family=Roboto:wght@300&family=Work+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Days+One&family=Inter:wght@300&family=Kanit:wght@300&family=Open+Sans:wght@400;500;600;700&family=Outfit&family=Poppins&family=Roboto:wght@300&family=Work+Sans&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: url(https://d22tvc7yc0tvsy.cloudfront.net/top-page/bg-top-1.png);
+  background-size: cover;
+  /* Ensures the background image covers the entire viewport */
+  background-position: center center;
+  /* Centers the background image horizontally and vertically */
+  background-repeat: no-repeat;
+  /* Prevents the background image from repeating */
+  background-attachment: fixed;
 }
 
 code {
